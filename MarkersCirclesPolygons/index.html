@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Leaflet Map</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link href="map.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([37.858998, 27.261972], 13);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var marker = L.marker([51.5, -0.09]).addTo(map);
+
+
+        var circle1 = L.circle([37.856836, 27.263845], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 5
+        }).addTo(map);
+
+        var circle2 = L.circle([37.857901, 27.260988], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5,
+            radius: 5
+        }).addTo(map);
+
+        var polygon1 = L.polygon([
+            [37.85709, 27.263263],
+            [37.857658, 27.263681],
+            [37.85788, 27.262941],
+            [37.857414, 27.262681]
+        ]).addTo(map);
+
+        var polygon2 = L.polygon([
+            [37.85741, 27.262284],
+            [37.856491, 27.262064],
+            [37.85644, 27.262402],
+            [37.857202, 27.262632]
+        ]).addTo(map);
+
+        var polygon3 = L.polygon([
+            [37.85709, 27.263263],
+            [37.857658, 27.263681],
+            [37.85788, 27.262941],
+            [37.857414, 27.262681]
+        ]).addTo(map);
+
+        var polygon3 = L.polyline([
+            [37.857846, 27.26106],
+            [37.857812, 27.261951],
+            [37.857338, 27.262552],
+            [37.856863, 27.263592]
+        ]).addTo(map);
+
+
+        var popup2 = L.popup()
+            .setLatLng([37.856829, 27.263839])
+            .setContent("Şevki Hasırcı Kavşağı")
+            .openOn(map);
+       
+
+
+       
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
